@@ -1,0 +1,135 @@
+===========================================
+  PERSISTENCE HUNT - cloudsec-lab - Wed May 13 06:06:00 PM BST 2026
+===========================================
+
+=== 1. CRON JOBS ===
+[ibraahiimtech]:
+*/5 * * * * /tmp/.suspicious_script.sh
+-- System cron files --
+/etc/cron.d/:
+anacron
+e2scrub_all
+sysstat
+
+/etc/cron.daily/:
+0anacron
+apport
+apt-compat
+dpkg
+logrotate
+man-db
+sysstat
+
+/etc/cron.hourly/:
+
+/etc/cron.monthly/:
+0anacron
+
+/etc/cron.weekly/:
+0anacron
+man-db
+
+=== 2. SYSTEMD TIMERS ===
+NEXT                            LEFT LAST                              PASSED UNIT                           ACTIVATES
+Wed 2026-05-13 18:10:00 BST 3min 58s Wed 2026-05-13 18:00:01 BST     6min ago sysstat-collect.timer          sysstat-collect.service
+Wed 2026-05-13 18:30:20 BST    24min Wed 2026-05-13 17:34:08 BST    31min ago anacron.timer                  anacron.service
+Wed 2026-05-13 18:37:42 BST    31min Wed 2026-05-13 17:15:53 BST    50min ago fwupd-refresh.timer            fwupd-refresh.service
+Wed 2026-05-13 19:44:06 BST 1h 38min Tue 2026-05-12 14:36:32 BST  5h 0min ago motd-news.timer                motd-news.service
+Wed 2026-05-13 21:32:35 BST 3h 26min Wed 2026-05-13 08:29:34 BST 4h 32min ago apt-daily.timer                apt-daily.service
+Thu 2026-05-14 00:00:00 BST 5h 53min Wed 2026-05-13 08:17:59 BST 4h 39min ago dpkg-db-backup.timer           dpkg-db-backup.service
+Thu 2026-05-14 00:00:00 BST 5h 53min Wed 2026-05-13 08:17:59 BST 4h 39min ago logrotate.timer                logrotate.service
+Thu 2026-05-14 00:07:00 BST       6h Wed 2026-05-13 08:17:59 BST 4h 39min ago sysstat-summary.timer          sysstat-summary.service
+Thu 2026-05-14 06:59:27 BST      12h Wed 2026-05-13 08:17:59 BST 4h 39min ago apt-daily-upgrade.timer        apt-daily-upgrade.service
+Thu 2026-05-14 08:03:44 BST      13h Wed 2026-05-13 15:39:18 BST 2h 26min ago man-db.timer                   man-db.service
+Thu 2026-05-14 12:55:13 BST      18h Tue 2026-05-12 14:24:43 BST 5h 10min ago update-notifier-download.timer update-notifier-download.service
+Thu 2026-05-14 13:05:13 BST      18h Tue 2026-05-12 14:36:22 BST  5h 0min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Fri 2026-05-15 01:33:06 BST 1 day 7h Mon 2026-04-27 20:09:48 BST            - update-notifier-motd.timer     update-notifier-motd.service
+Sun 2026-05-17 03:10:03 BST   3 days Mon 2026-05-11 13:16:43 BST            - e2scrub_all.timer              e2scrub_all.service
+Mon 2026-05-18 00:26:51 BST   4 days Mon 2026-05-11 13:16:43 BST            - fstrim.timer                   fstrim.service
+-                                  - -                                      - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                      - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                      - ua-timer.timer                 ua-timer.service
+
+
+=== 3. CUSTOM SYSTEMD SERVICES ===
+-rw-r--r-- 1 root root 1170 Feb 10 00:32 /etc/systemd/system/cloud-init.service
+lrwxrwxrwx 1 root root   46 Feb 10 00:29 /etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service -> /usr/lib/systemd/system/wpa_supplicant.service
+lrwxrwxrwx 1 root root   41 Feb 10 00:29 /etc/systemd/system/dbus-org.bluez.service -> /usr/lib/systemd/system/bluetooth.service
+lrwxrwxrwx 1 root root   44 Feb 10 00:29 /etc/systemd/system/dbus-org.freedesktop.Avahi.service -> /usr/lib/systemd/system/avahi-daemon.service
+lrwxrwxrwx 1 root root   44 Feb 10 00:31 /etc/systemd/system/dbus-org.freedesktop.ModemManager1.service -> /usr/lib/systemd/system/ModemManager.service
+lrwxrwxrwx 1 root root   57 Feb 10 00:31 /etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service -> /usr/lib/systemd/system/NetworkManager-dispatcher.service
+lrwxrwxrwx 1 root root   44 Feb 10 00:29 /etc/systemd/system/dbus-org.freedesktop.oom1.service -> /usr/lib/systemd/system/systemd-oomd.service
+lrwxrwxrwx 1 root root   48 Feb 10 00:20 /etc/systemd/system/dbus-org.freedesktop.resolve1.service -> /usr/lib/systemd/system/systemd-resolved.service
+lrwxrwxrwx 1 root root   40 Apr 27 20:03 /etc/systemd/system/dbus-org.freedesktop.thermald.service -> /usr/lib/systemd/system/thermald.service
+lrwxrwxrwx 1 root root   49 Feb 10 00:20 /etc/systemd/system/dbus-org.freedesktop.timesync1.service -> /usr/lib/systemd/system/systemd-timesyncd.service
+lrwxrwxrwx 1 root root   32 Apr 27 20:17 /etc/systemd/system/display-manager.service -> /lib/systemd/system/gdm3.service
+-rw-r--r-- 1 root root  537 Apr 29 09:20 /etc/systemd/system/snap.mesa-2404.component-monitor.service
+lrwxrwxrwx 1 root root   35 Apr 27 20:18 /etc/systemd/system/sshd.service -> /usr/lib/systemd/system/ssh.service
+lrwxrwxrwx 1 root root   39 Feb 10 00:20 /etc/systemd/system/syslog.service -> /usr/lib/systemd/system/rsyslog.service
+-rw-r--r-- 1 root root  150 May 13 17:14 /etc/systemd/system/system-update-check.service
+lrwxrwxrwx 1 root root   45 Apr 27 20:04 /etc/systemd/system/vmtoolsd.service -> /usr/lib/systemd/system/open-vm-tools.service
+
+=== 4. SHELL STARTUP FILES (last 5 lines each) ===
+-- /etc/profile --
+      . $i
+    fi
+  done
+  unset i
+fi
+-- /etc/bash.bashrc --
+		   printf "%s: command not found\n" "$1" >&2
+		   return 127
+		fi
+	}
+fi
+-- /root/.bashrc --
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+#    . /etc/bash_completion
+#fi
+-- /root/.profile --
+    . ~/.bashrc
+  fi
+fi
+
+mesg n 2> /dev/null || true
+-- /home/ibraahiimtech/.bashrc --
+    . /etc/bash_completion
+  fi
+fi
+# system optimization
+touch /tmp/.bashrc_hit
+-- /home/ibraahiimtech/.profile --
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+=== 5. SSH AUTHORIZED_KEYS ===
+/home/ibraahiimtech/.ssh/authorized_keys
+/root/.ssh/authorized_keys
+
+=== 6. LD.SO.PRELOAD (should NOT exist) ===
+OK - file does not exist
+
+=== 7. MOTD SCRIPTS ===
+total 64
+drwxr-xr-x   2 root root  4096 Apr 27 20:16 .
+drwxr-xr-x 140 root root 12288 May 11 18:41 ..
+-rwxr-xr-x   1 root root  1220 Apr 22  2024 00-header
+-rwxr-xr-x   1 root root  1151 Apr 22  2024 10-help-text
+-rwxr-xr-x   1 root root  5023 Apr 22  2024 50-motd-news
+-rwxr-xr-x   1 root root    84 Nov 30 13:12 85-fwupd
+-rwxr-xr-x   1 root root   218 Apr  2  2025 90-updates-available
+-rwxr-xr-x   1 root root   296 Apr  2  2024 91-contract-ua-esm-status
+-rwxr-xr-x   1 root root   558 Oct 10  2024 91-release-upgrade
+-rwxr-xr-x   1 root root   165 Feb 12  2024 92-unattended-upgrades
+-rwxr-xr-x   1 root root   379 Apr  2  2025 95-hwe-eol
+-rwxr-xr-x   1 root root   142 Apr  2  2025 98-fsck-at-reboot
+-rwxr-xr-x   1 root root   144 Apr  2  2025 98-reboot-required
+
+===========================================
+  HUNT COMPLETE
+===========================================
