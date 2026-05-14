@@ -1,0 +1,81 @@
+===========================================
+  PROCESS HUNT - cloudsec-lab - Thu May 14 12:07:04 PM BST 2026
+===========================================
+
+=== 1. TOP 10 CPU CONSUMERS ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ibraahi+    3592 99.6  0.0  18616  3564 pts/0    R    11:27  39:01 /bin/bash /tmp/.kworker-helper
+root        4738 16.6  0.1  28352  7636 pts/0    S+   12:07   0:00 sudo ./process-hunt.sh
+ibraahi+    2594  1.2  7.4 3900600 296752 ?      Ssl  11:18   0:35 /usr/bin/gnome-shell
+ibraahi+    2373  1.1  0.3 124032 14860 ?        Ssl  11:18   0:34 /usr/bin/pipewire
+root         782  0.7  0.2 253456  9732 ?        Ssl  11:15   0:22 /usr/bin/vmtoolsd
+ibraahi+    3556  0.2  1.5 711648 61560 ?        Ssl  11:22   0:07 /usr/libexec/gnome-terminal-server
+ibraahi+    2768  0.2  0.9 222960 38380 ?        Sl   11:18   0:06 /usr/bin/vmtoolsd -n vmusr --blockFd 3 --uinputFd 4
+root           1  0.1  0.3  23448 15028 ?        Ss   11:14   0:04 /sbin/init splash
+ibraahi+    3928  0.0  1.6 3156420 64884 ?       Sl   11:58   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+root        1115  0.0  1.0 1851036 41628 ?       Ssl  11:15   0:02 /snap/snapd/current/usr/lib/snapd/snapd
+
+=== 2. TOP 10 MEMORY CONSUMERS ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+ibraahi+    2594  1.2  7.4 3900600 296752 ?      Ssl  11:18   0:35 /usr/bin/gnome-shell
+ibraahi+    3051  0.0  2.3 278640 93808 ?        S    11:18   0:00 /usr/bin/Xwayland :0 -rootless -noreset -accessx -core -auth /run/user/1000/.mutter-Xwaylandauth.T11NP3 -listenfd 4 -listenfd 5 -displayfd 6 -initfd 7 -byteswappedclients
+ibraahi+    3327  0.0  2.3 748316 92016 ?        Sl   11:18   0:00 /usr/libexec/mutter-x11-frames
+ibraahi+    3209  0.0  2.1 667480 84872 ?        Ssl  11:18   0:00 /usr/libexec/gsd-xsettings
+ibraahi+    3928  0.0  1.6 3156420 64884 ?       Sl   11:58   0:00 gjs /usr/share/gnome-shell/extensions/ding@rastersoft.com/app/ding.js -E -P /usr/share/gnome-shell/extensions/ding@rastersoft.com/app
+ibraahi+    2751  0.0  1.6 838936 64436 ?        Sl   11:18   0:00 /usr/libexec/evolution-data-server/evolution-alarm-notify
+ibraahi+    3556  0.2  1.5 711648 61560 ?        Ssl  11:22   0:07 /usr/libexec/gnome-terminal-server
+root        3505  0.0  1.1 630088 45588 ?        Ssl  11:22   0:02 /usr/libexec/fwupd/fwupd
+ibraahi+    2692  0.0  1.0 607960 43304 ?        Ssl  11:18   0:00 /usr/libexec/evolution-source-registry
+root        1115  0.0  1.0 1851036 41628 ?       Ssl  11:15   0:02 /snap/snapd/current/usr/lib/snapd/snapd
+
+=== 3. PROCESSES RUNNING FROM SUSPICIOUS LOCATIONS ===
+lrwxrwxrwx 1 ibraahiimtech        techsom              0 May 14 11:34 /proc/3739/exe -> /tmp/.update-daemon (deleted)
+
+=== 4. PROCESSES WITH DELETED BINARIES (HIGH PRIORITY) ===
+lrwxrwxrwx 1 ibraahiimtech        techsom              0 May 14 11:34 /proc/3739/exe -> /tmp/.update-daemon (deleted)
+
+=== 5. LISTENING NETWORK PORTS ===
+Netid State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                                 
+udp   UNCONN 0      0            0.0.0.0:33400      0.0.0.0:*    users:(("avahi-daemon",pid=4508,fd=14))                
+udp   UNCONN 0      0            0.0.0.0:5353       0.0.0.0:*    users:(("avahi-daemon",pid=4508,fd=12))                
+udp   UNCONN 0      0         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=534,fd=16))              
+udp   UNCONN 0      0      127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=534,fd=14))              
+udp   UNCONN 0      0               [::]:5353          [::]:*    users:(("avahi-daemon",pid=4508,fd=13))                
+udp   UNCONN 0      0               [::]:41468         [::]:*    users:(("avahi-daemon",pid=4508,fd=15))                
+tcp   LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=534,fd=15))              
+tcp   LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=534,fd=17))              
+tcp   LISTEN 0      4096       127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=1593,fd=7))                        
+tcp   LISTEN 0      1            0.0.0.0:4444       0.0.0.0:*    users:(("nc",pid=3594,fd=3))                           
+tcp   LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=1631,fd=3),("systemd",pid=1,fd=387))
+tcp   LISTEN 0      4096           [::1]:631           [::]:*    users:(("cupsd",pid=1593,fd=6))                        
+tcp   LISTEN 0      4096            [::]:22            [::]:*    users:(("sshd",pid=1631,fd=4),("systemd",pid=1,fd=388))
+
+=== 6. ESTABLISHED OUTBOUND CONNECTIONS ===
+Netid Recv-Q Send-Q        Local Address:Port   Peer Address:PortProcess
+udp   0      0      192.168.17.137%ens33:68   192.168.17.254:67   users:(("NetworkManager",pid=1209,fd=26))
+
+=== 7. NON-STANDARD PROCESS OWNERS ===
+message+    1037 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+gnome-r+    1050 /usr/libexec/gnome-remote-desktop-daemon --system
+polkitd     1083 /usr/lib/polkit-1/polkitd --no-debug
+cups-br+    1638 /usr/sbin/cups-browsed
+kernoops    1648 /usr/sbin/kerneloops --test
+kernoops    1655 /usr/sbin/kerneloops
+rtkit       1833 /usr/libexec/rtkit-daemon
+colord      1969 /usr/libexec/colord
+ibraahi+    2359 /usr/lib/systemd/systemd --user
+ibraahi+    2362 (sd-pam)
+ibraahi+    2373 /usr/bin/pipewire
+ibraahi+    2374 /usr/bin/pipewire -c filter-chain.conf
+ibraahi+    2375 /snap/snapd-desktop-integration/361/usr/bin/snapd-desktop-integration
+ibraahi+    2380 /usr/bin/wireplumber
+ibraahi+    2384 /usr/bin/pipewire-pulse
+ibraahi+    2385 /usr/bin/gnome-keyring-daemon --foreground --components=pkcs11,secrets --control-directory=/run/user/1000/keyring
+ibraahi+    2391 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+ibraahi+    2428 /usr/libexec/gdm-wayland-session env GNOME_SHELL_SESSION_MODE=ubuntu /usr/bin/gnome-session --session=ubuntu
+ibraahi+    2429 /usr/libexec/xdg-document-portal
+ibraahi+    2433 /usr/libexec/gnome-session-binary --session=ubuntu
+
+===========================================
+  HUNT COMPLETE
+===========================================
