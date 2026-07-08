@@ -1,0 +1,32 @@
+===========================================
+  SSH LOG HUNT - cloudsec-lab - Wed Jul  8 07:42:06 PM BST 2026
+  Window: since 30 minutes ago
+===========================================
+
+=== 1. FAILED LOGIN COUNT ===
+Total failed authentications: 0
+
+=== 2. FAILED LOGINS BY TARGETED USERNAME ===
+
+=== 3. FAILED LOGINS BY SOURCE IP ===
+
+=== 4. SUCCESSFUL LOGINS (CRITICAL - verify each) ===
+Successful authentications: 0
+
+=== 5. INVALID USERNAME ATTEMPTS (accounts that don't exist) ===
+
+=== 6. SUDO ACTIVITY IN WINDOW ===
+Jul 08 19:41:16 cloudsec-lab sudo[4778]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:41:16 cloudsec-lab sudo[4782]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:41:16 cloudsec-lab sudo[4791]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sudo --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4797]: ibraahiimtech : TTY=pts/0 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=./log-hunt.sh '30 minutes ago'
+Jul 08 19:42:06 cloudsec-lab sudo[4803]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4807]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4816]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4825]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4829]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sshd --since '30 minutes ago' --no-pager
+Jul 08 19:42:06 cloudsec-lab sudo[4838]:     root : TTY=pts/1 ; PWD=/home/ibraahiimtech/linux-soc-labs/week01/day04-logs ; USER=root ; COMMAND=/usr/bin/journalctl _COMM=sudo --since '30 minutes ago' --no-pager
+
+===========================================
+  HUNT COMPLETE
+===========================================
