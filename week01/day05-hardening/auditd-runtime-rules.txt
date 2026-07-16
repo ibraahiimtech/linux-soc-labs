@@ -1,0 +1,11 @@
+-w /etc/passwd -p wa -k account_changes
+-w /etc/shadow -p wa -k account_changes
+-w /etc/gshadow -p wa -k account_changes
+-w /etc/group -p wa -k account_changes
+-w /etc/ssh/sshd_config -p wa -k ssh_config_changes
+-w /etc/ssh/sshd_config.d -p wa -k ssh_config_changes
+-w /etc/sudoers -p wa -k sudo_config_changes
+-w /etc/sudoers.d -p wa -k sudo_config_changes
+-a always,exit -F arch=b64 -S init_module,delete_module -F key=kernel_modules
+-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -F key=time_changes
+-a always,exit -F arch=b64 -S execve -F euid=0 -F key=root_commands

@@ -1,0 +1,29 @@
+----
+time->Thu Jul 16 18:30:29 2026
+type=PROCTITLE msg=audit(1784223029.604:1115): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=SYSCALL msg=audit(1784223029.604:1115): arch=c000003e syscall=44 success=yes exit=1084 a0=3 a1=7ffddeb86620 a2=43c a3=0 items=0 ppid=19999 pid=20013 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=4 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1784223029.604:1115): auid=1000 ses=4 subj=unconfined op=add_rule key="account_changes" list=4 res=1
+----
+time->Thu Jul 16 18:30:29 2026
+type=PROCTITLE msg=audit(1784223029.607:1116): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1784223029.607:1116): item=0 name="/etc/" inode=393217 dev=08:02 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1784223029.607:1116): cwd="/home/ibraahiimtech"
+type=SOCKADDR msg=audit(1784223029.607:1116): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1784223029.607:1116): arch=c000003e syscall=44 success=yes exit=1084 a0=3 a1=7ffddeb86620 a2=43c a3=0 items=1 ppid=19999 pid=20013 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=4 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1784223029.607:1116): auid=1000 ses=4 subj=unconfined op=add_rule key="account_changes" list=4 res=1
+----
+time->Thu Jul 16 18:30:29 2026
+type=PROCTITLE msg=audit(1784223029.611:1117): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1784223029.611:1117): item=0 name="/etc/" inode=393217 dev=08:02 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1784223029.611:1117): cwd="/home/ibraahiimtech"
+type=SOCKADDR msg=audit(1784223029.611:1117): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1784223029.611:1117): arch=c000003e syscall=44 success=yes exit=1084 a0=3 a1=7ffddeb86620 a2=43c a3=0 items=1 ppid=19999 pid=20013 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=4 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1784223029.611:1117): auid=1000 ses=4 subj=unconfined op=add_rule key="account_changes" list=4 res=1
+----
+time->Thu Jul 16 18:30:29 2026
+type=PROCTITLE msg=audit(1784223029.611:1118): proctitle=2F7362696E2F617564697463746C002D52002F6574632F61756469742F61756469742E72756C6573
+type=PATH msg=audit(1784223029.611:1118): item=0 name="/etc/" inode=393217 dev=08:02 mode=040755 ouid=0 ogid=0 rdev=00:00 nametype=PARENT cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1784223029.611:1118): cwd="/home/ibraahiimtech"
+type=SOCKADDR msg=audit(1784223029.611:1118): saddr=100000000000000000000000
+type=SYSCALL msg=audit(1784223029.611:1118): arch=c000003e syscall=44 success=yes exit=1084 a0=3 a1=7ffddeb86620 a2=43c a3=0 items=1 ppid=19999 pid=20013 auid=1000 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts1 ses=4 comm="auditctl" exe="/usr/sbin/auditctl" subj=unconfined key=(null)
+type=CONFIG_CHANGE msg=audit(1784223029.611:1118): auid=1000 ses=4 subj=unconfined op=add_rule key="account_changes" list=4 res=1

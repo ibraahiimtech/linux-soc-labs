@@ -1,0 +1,8 @@
+# ========================================
+# Day 5 hardening — deliberate baseline
+# Applied 2026-07-15
+# ========================================
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+MaxAuthTries 3

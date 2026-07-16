@@ -1,0 +1,24 @@
+# ========================================
+# Day 5 fail2ban configuration
+# Applied 2026-07-15
+# ========================================
+
+[DEFAULT]
+# Ban duration: 1 hour (3600 seconds)
+bantime = 3600
+
+# Failures within this window count toward the threshold
+findtime = 600
+
+# Number of failures before ban
+maxretry = 5
+
+# Never ban ourselves
+ignoreip = 127.0.0.1/8 ::1
+
+# Use systemd journal on modern Ubuntu
+backend = systemd
+
+[sshd]
+enabled = true
+port = ssh

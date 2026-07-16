@@ -1,0 +1,27 @@
+# ========================================
+# Day 5 audit rules — deliberate baseline
+# Applied 2026-07-15
+# ========================================
+
+# Watch account files
+-w /etc/passwd -p wa -k account_changes
+-w /etc/shadow -p wa -k account_changes
+-w /etc/gshadow -p wa -k account_changes
+-w /etc/group -p wa -k account_changes
+
+# Watch SSH server config
+-w /etc/ssh/sshd_config -p wa -k ssh_config_changes
+-w /etc/ssh/sshd_config.d/ -p wa -k ssh_config_changes
+
+# Watch sudo config
+-w /etc/sudoers -p wa -k sudo_config_changes
+-w /etc/sudoers.d/ -p wa -k sudo_config_changes
+
+# Log kernel module loading (rootkit indicator)
+-a always,exit -F arch=b64 -S init_module,delete_module -k kernel_modules
+
+# Log time changes (forensic anti-tampering)
+-a always,exit -F arch=b64 -S adjtimex,settimeofday,clock_settime -k time_changes
+
+# Log all commands run by root (heavy — comment out if it fills logs)
+-a always,exit -F arch=b64 -F euid=0 -S execve -k root_commands
